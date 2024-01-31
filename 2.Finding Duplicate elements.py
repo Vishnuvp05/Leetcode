@@ -7,13 +7,14 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         #create a list named unique_numbers
-        unique_numbers=[]
+        unique_numbers=set()
         #for taking all values use for loop
         for num in nums:
-            #if the data is not in uniique_numbers append the data
+             # If the element is already in the set, it's a duplicate
             if num in unique_numbers:
                 return True
-            unique_numbers.append(num)
-            #else return the num
+                # Otherwise, add it to the set
+            unique_numbers.add(num)
+            # No duplicates found
             
         return False
